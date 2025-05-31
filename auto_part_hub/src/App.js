@@ -7,7 +7,12 @@ import {
   Link,
 } from 'react-router-dom';
 
-// Placeholder Components for Page Routes
+import Catalog from './pages/Catalog';
+import ProductDetails from './pages/ProductDetails';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import Account from './pages/Account';
+
 // PUBLIC_INTERFACE
 function Home() {
   /** Home page showing landing or featured content */
@@ -24,57 +29,26 @@ function Home() {
 }
 
 // PUBLIC_INTERFACE
-function Catalog() {
-  /** Catalog page for browsing products */
+function NavBar() {
+  /** Global navigation bar for main container */
   return (
-    <div style={{ paddingTop: 48 }}>
-      <h2>Catalog</h2>
-      <p>Browse car spare parts here.</p>
-    </div>
-  );
-}
-
-// PUBLIC_INTERFACE
-function ProductDetails() {
-  /** Product detail for a specific part */
-  return (
-    <div style={{ paddingTop: 48 }}>
-      <h2>Product Details</h2>
-      <p>Details for selected spare part (mocked).</p>
-    </div>
-  );
-}
-
-// PUBLIC_INTERFACE
-function Cart() {
-  /** Shopping cart page */
-  return (
-    <div style={{ paddingTop: 48 }}>
-      <h2>Cart</h2>
-      <p>Your selected items appear here.</p>
-    </div>
-  );
-}
-
-// PUBLIC_INTERFACE
-function Checkout() {
-  /** Checkout page for placing order */
-  return (
-    <div style={{ paddingTop: 48 }}>
-      <h2>Checkout</h2>
-      <p>Checkout process (mocked).</p>
-    </div>
-  );
-}
-
-// PUBLIC_INTERFACE
-function UserAccount() {
-  /** User Account/Profile page */
-  return (
-    <div style={{ paddingTop: 48 }}>
-      <h2>Account</h2>
-      <p>Manage your account and orders (mocked).</p>
-    </div>
+    <nav className="navbar">
+      <div className="container">
+        <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
+          <div className="logo">
+            <span className="logo-symbol">*</span>
+            <span>KAVIA AI</span>
+          </div>
+          <div style={{ display: 'flex', gap: 16 }}>
+            <Link className="btn" to="/">Home</Link>
+            <Link className="btn" to="/catalog">Catalog</Link>
+            <Link className="btn" to="/cart">Cart</Link>
+            <Link className="btn" to="/checkout">Checkout</Link>
+            <Link className="btn" to="/account">Account</Link>
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 }
 
@@ -82,23 +56,7 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <nav className="navbar">
-          <div className="container">
-            <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%' }}>
-              <div className="logo">
-                <span className="logo-symbol">*</span>
-                <span>KAVIA AI</span>
-              </div>
-              <div style={{ display: 'flex', gap: 16 }}>
-                <Link className="btn" to="/">Home</Link>
-                <Link className="btn" to="/catalog">Catalog</Link>
-                <Link className="btn" to="/cart">Cart</Link>
-                <Link className="btn" to="/checkout">Checkout</Link>
-                <Link className="btn" to="/account">Account</Link>
-              </div>
-            </div>
-          </div>
-        </nav>
+        <NavBar />
         <main>
           <div className="container" style={{ paddingTop: 96 }}>
             <Routes>
@@ -107,7 +65,7 @@ function App() {
               <Route path="/product/:productId" element={<ProductDetails />} />
               <Route path="/cart" element={<Cart />} />
               <Route path="/checkout" element={<Checkout />} />
-              <Route path="/account" element={<UserAccount />} />
+              <Route path="/account" element={<Account />} />
             </Routes>
           </div>
         </main>
