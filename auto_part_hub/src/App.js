@@ -12,6 +12,7 @@ import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
 import Checkout from './pages/Checkout';
 import Account from './pages/Account';
+import Sidebar from './components/Sidebar';
 
 // PUBLIC_INTERFACE
 function Home() {
@@ -29,8 +30,9 @@ function Home() {
 }
 
 // PUBLIC_INTERFACE
+// Retain NavBar for mobile/branding if needed, but hide on desktop for sidebar
 function NavBar() {
-  /** Global navigation bar for main container */
+  /** Top navigation bar for mobile/branding */
   return (
     <nav className="navbar">
       <div className="container">
@@ -56,19 +58,23 @@ function App() {
   return (
     <Router>
       <div className="app">
+        {/* NavBar is primarily for mobile branding and is hidden on desktop */}
         <NavBar />
-        <main>
-          <div className="container" style={{ paddingTop: 96 }}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/catalog" element={<Catalog />} />
-              <Route path="/product/:productId" element={<ProductDetails />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/checkout" element={<Checkout />} />
-              <Route path="/account" element={<Account />} />
-            </Routes>
-          </div>
-        </main>
+        <div className="main-layout">
+          <Sidebar />
+          <main className="main-content" tabIndex="-1">
+            <div className="container" style={{ paddingTop: 54, paddingBottom: 24 }}>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/catalog" element={<Catalog />} />
+                <Route path="/product/:productId" element={<ProductDetails />} />
+                <Route path="/cart" element={<Cart />} />
+                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/account" element={<Account />} />
+              </Routes>
+            </div>
+          </main>
+        </div>
       </div>
     </Router>
   );
