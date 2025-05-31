@@ -86,44 +86,35 @@ const MOCK_PRODUCTS = [
   },
 ];
 
-// PUBLIC_INTERFACE
+/**
+ * PUBLIC_INTERFACE
+ * Modern, visually distinct version of the Catalog page with a bold header,
+ * card/chip-style filters, and an updated layout panel.
+ */
 function Catalog() {
-  /** Catalog page - browse car spare parts with filters and product grid */
-  // Filtering logic stub (could be expanded with query/filter state)
   const [products] = useState(MOCK_PRODUCTS);
 
   return (
-    <div style={{ paddingTop: 48 }}>
-      <h2>Catalog</h2>
-      <div
-        style={{
-          display: "flex",
-          gap: 32,
-          alignItems: "flex-start",
-          minHeight: 500,
-        }}
-      >
-        {/* Filters Sidebar */}
-        <div
-          style={{
-            minWidth: 210,
-            maxWidth: 250,
-            background: "rgba(240,240,240,0.12)",
-            borderRadius: 8,
-            border: "1px solid var(--border-color)",
-            padding: 16,
-            color: "#333",
-            backgroundColor: "#f5f6fa",
-          }}
-        >
+    <section className="catalog-modern-wrapper">
+      <header className="catalog-modern-header">
+        <h1>
+          <span className="catalog-accent">Product</span> <span>Catalog</span>
+        </h1>
+        <p>
+          Browse, search and shop genuine auto parts. Powerful filters help you find the perfect fit!
+        </p>
+      </header>
+      <div className="catalog-main-panel">
+        {/* Modern Sidebar Filters */}
+        <aside className="catalog-filter-panel">
           <Filters />
-        </div>
-        {/* Product List */}
-        <div style={{ flex: 1 }}>
+        </aside>
+        {/* Refined Product List */}
+        <section className="catalog-products-panel">
           <ProductList products={products} />
-        </div>
+        </section>
       </div>
-    </div>
+    </section>
   );
 }
 
