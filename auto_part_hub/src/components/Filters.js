@@ -3,29 +3,32 @@ import React from "react";
 // PUBLIC_INTERFACE
 function Filters() {
   /** 
-   * Filters component - stub for product filtering sidebar
-   * To be expanded with real filtering options
+   * Modern Filters component - visually distinct, chip/toggle-style filter stubs
    */
   return (
-    <div>
-      <div style={{ fontWeight: 600, fontSize: 17, marginBottom: 12, color: "#222" }}>
-        Filters
+    <div className="filters-modern-section">
+      <div className="filters-modern-header">Filter by</div>
+      <div className="filters-modern-group">
+        <div className="filters-modern-label">Category</div>
+        <div className="chip-row">
+          <span className="chip">Brakes</span>
+          <span className="chip">Filters</span>
+          <span className="chip">Engine</span>
+          <span className="chip">Electrical</span>
+        </div>
       </div>
-      <div style={{
-        color: "#888",
-        fontStyle: "italic",
-        fontSize: 14,
-        marginBottom: 8
-      }}>
-        Filtering options coming soon.
+      <div className="filters-modern-group">
+        <div className="filters-modern-label">Brand</div>
+        <div className="chip-row">
+          <span className="chip">Brembo</span>
+          <span className="chip">Bosch</span>
+          <span className="chip">NGK</span>
+          <span className="chip">Optima</span>
+        </div>
       </div>
-      {/* Future: Category, price, brand, compatibility, etc. */}
-      <ul style={{ margin: 0, paddingLeft: 16, color: "#757575", fontSize: 14 }}>
-        <li>Category</li>
-        <li>Price</li>
-        <li>Brand</li>
-        <li>Compatibility</li>
-      </ul>
+      <div className="filters-modern-note">
+        * Filtering by chips to come soon.
+      </div>
     </div>
   );
 }
