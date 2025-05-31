@@ -117,3 +117,254 @@ body {
   padding: 12px 24px;
   font-size: 1.1rem;
 }
+
+/* ===== Modern Catalog/Products Redesign ===== */
+
+.catalog-modern-wrapper {
+  background: var(--gray-bg);
+  border-radius: 18px;
+  padding: 38px 0 56px 0;
+  margin-top: 24px;
+  min-height: 72vh;
+  box-shadow: 0 4px 16px rgba(40,38,60,0.12);
+}
+
+.catalog-modern-header {
+  text-align: left;
+  padding-bottom: 16px;
+  padding-left: 8px;
+}
+
+.catalog-modern-header h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, var(--kavia-orange), #fbd3bb 68%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin: 0 0 6px 0;
+  letter-spacing: -0.5px;
+}
+
+.catalog-modern-header .catalog-accent {
+  color: var(--kavia-orange);
+  font-weight: 800;
+}
+
+.catalog-modern-header p {
+  color: var(--text-secondary);
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.catalog-main-panel {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.catalog-filter-panel {
+  min-width: 250px;
+  max-width: 300px;
+  background: var(--gray-filter-bg);
+  border-radius: 13px;
+  border: 1.5px solid var(--border-color);
+  box-shadow: 0 2px 10px rgba(34,37,50,0.08);
+  padding: 20px 20px 14px;
+}
+
+.catalog-products-panel {
+  flex: 1;
+}
+
+.product-list-modern-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  gap: 32px 26px;
+}
+
+/* Modern Product Card */
+.product-card-modern {
+  background: var(--gray-panel);
+  border-radius: 15px;
+  box-shadow: 0 2px 12px 0 rgba(19,23,39,0.13);
+  padding: 0 0 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-height: 340px;
+  transition: box-shadow 0.2s, transform 0.17s;
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+.product-card-modern:hover {
+  box-shadow: 0 8px 34px 0 rgba(232, 122, 65, 0.15), 0 2px 20px 0 rgba(19,23,39,0.13);
+  transform: translateY(-3px) scale(1.021);
+  border: 1.5px solid var(--kavia-orange);
+}
+
+.product-image-container {
+  position: relative;
+  padding: 24px 0 0 0;
+  background: var(--gray-highlight);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 13px;
+  border-top-right-radius: 13px;
+  height: 165px;
+}
+.product-modern-img {
+  width: 112px;
+  height: 112px;
+  object-fit: cover;
+  border-radius: 9px;
+  background: #eee;
+  box-shadow: 0 4px 18px rgba(20,18,65,0.09);
+  z-index: 3;
+}
+
+.product-badge {
+  position: absolute;
+  left: 18px;
+  top: 20px;
+  background: var(--kavia-orange);
+  color: #fff;
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 3px 9px;
+  border-radius: 10px 8px 12px 8px;
+  letter-spacing: 1px;
+  opacity: 0.96;
+  z-index: 10;
+  box-shadow: 0 1px 4px rgba(232, 122, 65, 0.21);
+}
+
+.product-modern-body {
+  padding: 18px 18px 0 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 100px;
+}
+
+.product-modern-top {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.product-modern-title {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+}
+.product-modern-brand {
+  color: var(--kavia-orange);
+  font-size: 0.94rem;
+  font-weight: 500;
+  opacity: 0.74;
+}
+
+.product-modern-price {
+  color: #ffebbb;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-top: 2px;
+  letter-spacing: 0.03rem;
+}
+
+.product-modern-compat {
+  margin-top: 4px;
+}
+.compat-pill {
+  background: var(--compat-bg);
+  color: #d1cae4;
+  font-size: 0.92rem;
+  border-radius: 8px;
+  padding: 3px 9px;
+  font-style: italic;
+  opacity: 0.83;
+}
+
+/* Large button style for modern cards */
+.btn-modern {
+  width: calc(100% - 36px);
+  margin: 18px 18px 0 18px;
+  border-radius: 7px;
+  font-size: 1.07rem;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+  background: linear-gradient(90deg, var(--kavia-orange), #ff9a5e 74%);
+  color: #fff !important;
+  box-shadow: 0 2px 6px rgba(232, 122, 65, 0.13);
+  border: none;
+  padding: 12px 0;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.18s;
+  text-decoration: none;
+}
+.btn-modern:hover {
+  background: linear-gradient(90deg, #fdb986, var(--kavia-orange) 65%);
+  color: #262223 !important;
+}
+
+/* === Modern Filters === */
+.filters-modern-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.filters-modern-header {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: 1.1px;
+}
+.filters-modern-group {
+  margin-bottom: 6px;
+}
+.filters-modern-label {
+  color: #ffb085;
+  font-weight: 600;
+  margin-bottom: 3px;
+  font-size: 1.01rem;
+  letter-spacing: 0.5px;
+}
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+.chip {
+  background: var(--chip-bg);
+  color: var(--chip-fg);
+  border-radius: 16px;
+  padding: 6px 14px;
+  font-size: 0.96rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--chip-bg);
+  opacity: 0.93;
+  transition: background .16s, color .11s, border .17s;
+}
+.chip:hover {
+  background: var(--chip-selected);
+  color: #fff;
+  border: 1px solid var(--kavia-orange);
+  opacity: 1;
+}
+.filters-modern-note {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-top: 12px;
+  opacity: 0.7;
+}
+
